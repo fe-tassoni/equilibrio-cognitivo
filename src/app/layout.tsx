@@ -9,7 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Equilíbrio Cognitivo",
-  description: "Cuidado psicológico simplificado",
+  description: "Plataforma de apoio psicológico e cognitivo",
+  icons: {
+    icon: '/icon.png',
+  },
 };
 
 export default function RootLayout({
