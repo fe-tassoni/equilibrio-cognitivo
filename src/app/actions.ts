@@ -8,15 +8,46 @@ import { createClient } from "../../supabase/server";
 export const signUpAction = async (formData: FormData) => {
   const email = formData.get("email")?.toString();
   const password = formData.get("password")?.toString();
+  const confirmPassword = formData.get("confirmPassword")?.toString();
   const fullName = formData.get("full_name")?.toString() || '';
   const supabase = await createClient();
   const origin = headers().get("origin");
 
-  if (!email || !password) {
+  if (!email || !password || !confirmPassword) {
     return encodedRedirect(
       "error",
       "/sign-up",
-      "Email and password are required",
+      "Email, senha e confirmação de senha são obrigatórios.",
+    );
+  }
+
+  if (password !== confirmPassword) {
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "As senhas não coincidem.",
+    );
+  }
+
+  // 🔍 Validação de senha com RPC do Supabase
+  const { data: isValid, error: validationError } = await supabase.rpc('validate_password', {
+    password,
+  });
+
+  if (validationError) {
+    console.error("Erro ao validar senha:", validationError);
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "Erro ao validar a senha. Tente novamente.",
+    );
+  }
+
+  if (!isValid) {
+    return encodedRedirect(
+      "error",
+      "/sign-up",
+      "A senha deve conter ao menos 8 caracteres, incluindo letra maiúscula, minúscula, número e caractere especial.",
     );
   }
 
@@ -65,7 +96,7 @@ export const signUpAction = async (formData: FormData) => {
   return encodedRedirect(
     "success",
     "/sign-up",
-    "Thanks for signing up! Please check your email for a verification link.",
+    "Obrigado por se cadastrar! Por favor, cheque seu email para o link de verificação.",
   );
 };
 
@@ -93,7 +124,7 @@ export const forgotPasswordAction = async (formData: FormData) => {
   const callbackUrl = formData.get("callbackUrl")?.toString();
 
   if (!email) {
-    return encodedRedirect("error", "/forgot-password", "Email is required");
+    return encodedRedirect("error", "/forgot-password", "Email é obrigatório");
   }
 
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
@@ -105,7 +136,7 @@ export const forgotPasswordAction = async (formData: FormData) => {
     return encodedRedirect(
       "error",
       "/forgot-password",
-      "Could not reset password",
+      "Não foi possível resetar a senha.",
     );
   }
 
@@ -116,7 +147,7 @@ export const forgotPasswordAction = async (formData: FormData) => {
   return encodedRedirect(
     "success",
     "/forgot-password",
-    "Check your email for a link to reset your password.",
+    "Verifique seu email para o link de redefinição de senha.",
   );
 };
 
@@ -130,7 +161,7 @@ export const resetPasswordAction = async (formData: FormData) => {
     encodedRedirect(
       "error",
       "/protected/reset-password",
-      "Password and confirm password are required",
+      "Senha e confirmação de senha necessária.",
     );
   }
 
@@ -138,7 +169,7 @@ export const resetPasswordAction = async (formData: FormData) => {
     encodedRedirect(
       "error",
       "/dashboard/reset-password",
-      "Passwords do not match",
+      "Senhas não coincidem",
     );
   }
 
@@ -150,7 +181,7 @@ export const resetPasswordAction = async (formData: FormData) => {
     encodedRedirect(
       "error",
       "/dashboard/reset-password",
-      "Password update failed",
+      "Atualização de senha falhou",
     );
   }
 

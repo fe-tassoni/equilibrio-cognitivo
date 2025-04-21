@@ -24,66 +24,66 @@ export default async function SignInPage({ searchParams }: LoginProps) {
   return (
     <>
       <Navbar />
-      <div className="flex min-h-screen flex-col items-center justify-center bg-background px-4 py-8">
-        <div className="w-full max-w-md rounded-lg border border-border bg-card p-6 shadow-sm">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-indigo-50 to-indigo-100 px-4 py-8">
+        <div className="w-full max-w-md rounded-lg border border-indigo-200 bg-white p-6 shadow-xl">
           <form className="flex flex-col space-y-6">
             <div className="space-y-2 text-center">
-              <h1 className="text-3xl font-semibold tracking-tight">Sign in</h1>
-              <p className="text-sm text-muted-foreground">
-                Don't have an account?{" "}
+              <h1 className="text-3xl font-semibold tracking-tight text-indigo-600">Entrar</h1>
+              <p className="text-sm text-indigo-600">
+                Ainda não tem uma conta?{" "}
                 <Link
-                  className="text-primary font-medium hover:underline transition-all"
+                  className="text-indigo-700 font-medium hover:underline transition-all"
                   href="/sign-up"
                 >
-                  Sign up
+                  Cadastre-se
                 </Link>
               </p>
             </div>
 
             <div className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium">
-                  Email
+                <Label htmlFor="email" className="text-sm font-medium text-gray-700">
+                  E-mail
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="you@example.com"
+                  placeholder="voce@exemplo.com"
                   required
-                  className="w-full"
+                  className="w-full border-indigo-300 focus:ring-indigo-500"
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <Label htmlFor="password" className="text-sm font-medium">
-                    Password
+                  <Label htmlFor="password" className="text-sm font-medium text-gray-700">
+                    Senha
                   </Label>
                   <Link
-                    className="text-xs text-muted-foreground hover:text-foreground hover:underline transition-all"
+                    className="text-xs text-indigo-500 hover:text-indigo-700 hover:underline transition-all"
                     href="/forgot-password"
                   >
-                    Forgot Password?
+                    Esqueceu a senha?
                   </Link>
                 </div>
                 <Input
                   id="password"
                   type="password"
                   name="password"
-                  placeholder="Your password"
+                  placeholder="Sua senha"
                   required
-                  className="w-full"
+                  className="w-full border-indigo-300 focus:ring-indigo-500"
                 />
               </div>
             </div>
 
             <SubmitButton
-              className="w-full"
-              pendingText="Signing in..."
+              className="w-full bg-indigo-600 text-white hover:bg-indigo-700"
+              pendingText="Entrando..."
               formAction={signInAction}
             >
-              Sign in
+              Entrar
             </SubmitButton>
 
             <FormMessage message={message} />

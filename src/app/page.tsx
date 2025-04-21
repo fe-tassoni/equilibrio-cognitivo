@@ -29,47 +29,48 @@ export default async function Home() {
       <section className="py-24 bg-white" id="services">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Nossos Serviços</h2>
+            <h2 className="text-3xl font-bold mb-4">Nossos Serviços Neuropsicológicos</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Oferecemos uma variedade de serviços psicológicos para atender às
-              suas necessidades específicas.
+              Oferecemos uma gama de serviços especializados em avaliações
+              neuropsicológicas para entender melhor seu desempenho cognitivo e
+              emocional, visando proporcionar diagnósticos precisos e personalizados.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
+            {[ 
               {
                 icon: <Brain className="w-6 h-6" />,
-                title: "Consultas Psicológicas",
+                title: "Avaliação Cognitiva",
                 description:
-                  "Atendimento personalizado com profissionais qualificados",
+                  "Exames detalhados para avaliar funções cognitivas como memória, atenção, e habilidades linguísticas.",
               },
               {
                 icon: <Calendar className="w-6 h-6" />,
                 title: "Agendamento Flexível",
                 description:
-                  "Marque consultas de acordo com sua disponibilidade",
+                  "Agende suas avaliações neuropsicológicas conforme sua disponibilidade.",
               },
               {
                 icon: <FileText className="w-6 h-6" />,
-                title: "Testes Psicológicos",
-                description: "Avaliações completas com resultados detalhados",
+                title: "Laudos Neuropsicológicos",
+                description: "Receba relatórios detalhados com interpretações clínicas dos testes realizados.",
               },
               {
                 icon: <Shield className="w-6 h-6" />,
                 title: "Privacidade Garantida",
-                description: "Seus dados e informações sempre protegidos",
+                description: "Seus dados e informações estão sempre protegidos com confidencialidade.",
               },
               {
                 icon: <Clock className="w-6 h-6" />,
-                title: "Acompanhamento Contínuo",
-                description: "Monitoramento de progresso e evolução",
+                title: "Acompanhamento de Resultados",
+                description: "Monitoramento contínuo da evolução cognitiva e recomendação de intervenções.",
               },
               {
                 icon: <Users className="w-6 h-6" />,
-                title: "Terapia em Grupo",
+                title: "Consultoria para Profissionais",
                 description:
-                  "Sessões colaborativas para compartilhar experiências",
+                  "Sessões de apoio e orientação para psicólogos e outros profissionais da saúde mental.",
               },
             ].map((feature, index) => (
               <div
@@ -91,7 +92,8 @@ export default async function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold mb-4">Como Funciona</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Um processo simples e eficiente para cuidar da sua saúde mental.
+              Um processo simples e eficiente para obter uma avaliação
+              neuropsicológica detalhada e precisa.
             </p>
           </div>
 
@@ -102,7 +104,7 @@ export default async function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Cadastre-se</h3>
               <p className="text-gray-600">
-                Crie sua conta como paciente ou psicólogo em poucos minutos.
+                Crie sua conta como paciente ou neuropsicólogo em poucos minutos.
               </p>
             </div>
             <div className="text-center p-6">
@@ -111,18 +113,16 @@ export default async function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Agende</h3>
               <p className="text-gray-600">
-                Escolha o tipo de consulta, data e horário que melhor se adequam
-                a você.
+                Escolha o tipo de avaliação e agende o horário mais conveniente.
               </p>
             </div>
             <div className="text-center p-6">
               <div className="w-12 h-12 bg-indigo-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 3
               </div>
-              <h3 className="text-xl font-semibold mb-2">Receba Atendimento</h3>
+              <h3 className="text-xl font-semibold mb-2">Receba o Laudo</h3>
               <p className="text-gray-600">
-                Participe das consultas e acesse seus resultados diretamente na
-                plataforma.
+                Receba seu laudo neuropsicológico completo com recomendações de acompanhamento.
               </p>
             </div>
           </div>
@@ -135,11 +135,11 @@ export default async function Home() {
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
               <div className="text-4xl font-bold mb-2">1000+</div>
-              <div className="text-indigo-100">Consultas Realizadas</div>
+              <div className="text-indigo-100">Avaliações Realizadas</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">50+</div>
-              <div className="text-indigo-100">Psicólogos Parceiros</div>
+              <div className="text-indigo-100">Profissionais Qualificados</div>
             </div>
             <div>
               <div className="text-4xl font-bold mb-2">98%</div>
@@ -152,10 +152,10 @@ export default async function Home() {
       {/* CTA Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Pronto para Começar?</h2>
+          <h2 className="text-3xl font-bold mb-4">Pronto para Iniciar sua Avaliação?</h2>
           <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-            Junte-se a milhares de pacientes que já estão cuidando da sua saúde
-            mental com nossa plataforma.
+            Junte-se a pacientes que já estão entendendo melhor sua saúde cognitiva com nossas avaliações
+            neuropsicológicas de alta precisão.
           </p>
           <Link
             href="/sign-up"

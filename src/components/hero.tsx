@@ -18,17 +18,17 @@ export default function Hero() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 mb-8 tracking-tight">
-              Cuidado{" "}
+              Avaliações{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
-                Psicológico
+                Neuropsicológicas
               </span>{" "}
-              Simplificado
+              Eficientes
             </h1>
 
             <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Plataforma completa para gerenciamento de consultas psicológicas e
-              testes. Conectando pacientes e psicólogos de forma eficiente e
-              segura.
+              Plataforma completa para a realização e acompanhamento de avaliações
+              neuropsicológicas. Conectando profissionais e pacientes de forma
+              eficiente, segura e com resultados precisos.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -51,15 +51,15 @@ export default function Hero() {
             <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>Agendamento simplificado</span>
+                <span>Agendamento de avaliações simplificado</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>Resultados de testes online</span>
+                <span>Resultados de testes neuropsicológicos online</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="w-5 h-5 text-green-500" />
-                <span>Notificações por e-mail</span>
+                <span>Notificações automáticas por e-mail</span>
               </div>
             </div>
           </div>

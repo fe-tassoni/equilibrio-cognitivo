@@ -13,8 +13,8 @@ export default async function Navbar() {
   return (
     <nav className="w-full border-b border-gray-200 bg-white py-2">
       <div className="container mx-auto px-4 flex justify-between items-center">
-      <img src="/icon.png" alt="Equilíbrio Cognitivo" className="h-8 w-auto mr-2" />
-        <Link href="/" prefetch className="text-xl font-bold">
+      <img src="/icon.png" alt="Equilíbrio Cognitivo" className="h-16 w-auto mr-2" />
+        <Link href="/" prefetch className="text-3xl font-semibold tracking-tight text-indigo-600">
           Equilíbrio Cognitivo
         </Link>
         <div className="flex gap-4 items-center">
@@ -34,7 +34,7 @@ export default async function Navbar() {
             <>
               <Link
                 href="/sign-in"
-                className="px-4 py-2 text-sm font-medium text-white bg-black rounded-md hover:bg-gray-800"
+                className="px-4 py-2 text-sm font-medium rounded-md bg-indigo-600 text-white hover:bg-indigo-700"
               >
                 Entrar
               </Link>
